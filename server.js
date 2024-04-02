@@ -9,6 +9,11 @@ app.set('views', __dirname + './views');
 app.set('port', process.env.PORT || 3000);
 
 app.use(express.static(__dirname + './views'));
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+
+app.use('/file', require('./router/file.js') );
+
 
 
 app.listen(app.get('port'), () => {
@@ -17,6 +22,10 @@ app.listen(app.get('port'), () => {
 
 
 
+
+
 app.get('/', (req, res) => {
     res.render(path.join(__dirname,'./views/index.ejs'));
 })
+
+
