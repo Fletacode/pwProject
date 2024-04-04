@@ -31,9 +31,16 @@
 
         <div class="col">
           <!-- 페이지 내용 -->
-          <div class="container">
-            <h1>메인 페이지</h1>
-           
+          <div class="">
+            <h1>리스트</h1>
+            <div class="row">
+            <% imagePaths.forEach(function(file) { %>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <%= file %>
+                  <a href="./photo/<%= file %>" class="btn btn-primary">사진 보기</a>
+              </li>
+          <% }); %>
+        </div>
           </div>
 
 
